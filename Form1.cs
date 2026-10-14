@@ -14,6 +14,31 @@ namespace BaobabWildlifeRehab
             dgvAnimals.DataSource = handler.DataSource;
         }
 
+        private void LoadAnimals()
+        {
+            try
+            {
+                int skippedCount = handler.Load();
+
+                if (skippedCount > 0)
+                {
+                    MessageBox.Show(
+                        $"{skippedCount} malformed record(s) were skipped.",
+                        "Animal Records",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Unable to Load Animals",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
         private void txtAnimaliD_TextChanged(object sender, EventArgs e)
         {
 
@@ -117,6 +142,11 @@ namespace BaobabWildlifeRehab
         private void dgvAnimals_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadAnimals();
         }
     }
 }

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             DataGridView dgvAnimals;
+            Id = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            Species = new DataGridViewTextBoxColumn();
+            Age = new DataGridViewTextBoxColumn();
+            RecoveryScore = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            HousingUnit = new DataGridViewTextBoxColumn();
             txtAnimaliD = new TextBox();
             txtName = new TextBox();
             txtSpecies = new TextBox();
@@ -49,16 +56,74 @@
             lblCriticalCount = new Label();
             lblAverageScore = new Label();
             lblAverageAge = new Label();
-            Id = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
-            Species = new DataGridViewTextBoxColumn();
-            Age = new DataGridViewTextBoxColumn();
-            RecoveryScore = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            HousingUnit = new DataGridViewTextBoxColumn();
             dgvAnimals = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             SuspendLayout();
+            // 
+            // dgvAnimals
+            // 
+            dgvAnimals.AllowUserToAddRows = false;
+            dgvAnimals.AllowUserToDeleteRows = false;
+            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
+            dgvAnimals.GridColor = Color.Cyan;
+            dgvAnimals.Location = new Point(206, 12);
+            dgvAnimals.MultiSelect = false;
+            dgvAnimals.Name = "dgvAnimals";
+            dgvAnimals.ReadOnly = true;
+            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnimals.Size = new Size(744, 168);
+            dgvAnimals.TabIndex = 12;
+            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
+            // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            // 
+            // colName
+            // 
+            colName.DataPropertyName = "colName";
+            colName.HeaderText = "colName";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            // 
+            // Species
+            // 
+            Species.DataPropertyName = "Species";
+            Species.HeaderText = "Species";
+            Species.Name = "Species";
+            Species.ReadOnly = true;
+            // 
+            // Age
+            // 
+            Age.DataPropertyName = "Age";
+            Age.HeaderText = "Age";
+            Age.Name = "Age";
+            Age.ReadOnly = true;
+            // 
+            // RecoveryScore
+            // 
+            RecoveryScore.DataPropertyName = "RecoveryScore";
+            RecoveryScore.HeaderText = "Recovery Score";
+            RecoveryScore.Name = "RecoveryScore";
+            RecoveryScore.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.DataPropertyName = "Status";
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
+            // 
+            // HousingUnit
+            // 
+            HousingUnit.DataPropertyName = "HousingUnit";
+            HousingUnit.HeaderText = "Housing Unit";
+            HousingUnit.Name = "HousingUnit";
+            HousingUnit.ReadOnly = true;
             // 
             // txtAnimaliD
             // 
@@ -168,22 +233,6 @@
             txtSearchID.TabIndex = 11;
             txtSearchID.TextChanged += txtSearchID_TextChanged;
             // 
-            // dgvAnimals
-            // 
-            dgvAnimals.AllowUserToAddRows = false;
-            dgvAnimals.AllowUserToDeleteRows = false;
-            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
-            dgvAnimals.GridColor = Color.Cyan;
-            dgvAnimals.Location = new Point(206, 12);
-            dgvAnimals.MultiSelect = false;
-            dgvAnimals.Name = "dgvAnimals";
-            dgvAnimals.ReadOnly = true;
-            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAnimals.Size = new Size(744, 168);
-            dgvAnimals.TabIndex = 12;
-            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
-            // 
             // lblTotalAnimals
             // 
             lblTotalAnimals.AutoSize = true;
@@ -264,55 +313,6 @@
             lblAverageAge.Text = "label8";
             lblAverageAge.Click += lblAverageAge_Click;
             // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            // 
-            // Name
-            // 
-            colName.DataPropertyName = "colName";
-            colName.HeaderText = "colName";
-            colName.Name = "colName";
-            colName.ReadOnly = true;
-            // 
-            // Species
-            // 
-            Species.DataPropertyName = "Species";
-            Species.HeaderText = "Species";
-            Species.Name = "Species";
-            Species.ReadOnly = true;
-            // 
-            // Age
-            // 
-            Age.DataPropertyName = "Age";
-            Age.HeaderText = "Age";
-            Age.Name = "Age";
-            Age.ReadOnly = true;
-            // 
-            // RecoveryScore
-            // 
-            RecoveryScore.DataPropertyName = "RecoveryScore";
-            RecoveryScore.HeaderText = "Recovery Score";
-            RecoveryScore.Name = "RecoveryScore";
-            RecoveryScore.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.DataPropertyName = "Status";
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            // 
-            // HousingUnit
-            // 
-            HousingUnit.DataPropertyName = "HousingUnit";
-            HousingUnit.HeaderText = "Housing Unit";
-            HousingUnit.Name = "HousingUnit";
-            HousingUnit.ReadOnly = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -342,6 +342,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).EndInit();
             ResumeLayout(false);
             PerformLayout();
