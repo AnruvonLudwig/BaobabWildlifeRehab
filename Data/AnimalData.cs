@@ -9,7 +9,23 @@ namespace BaobabWildlifeRehab.Data
     internal partial class AnimalData
     {
         // The grid binds to this ONCE. Features edit this list AND the file, so the grid stays current.
-        public BindingSource DataSource { get; } = new BindingSource();
+        private readonly BindingSource source = new BindingSource();
+        private bool isLoaded = false;
+
+        // The grid binds to this. The first time it is read, the file is loaded into it.
+        public BindingSource Source
+        {
+            get
+            {
+                if (!isLoaded)
+                {
+                    //Load();
+                    //OR
+                    throw new DataAccessException("Source not loaded!");
+                }
+                return source;
+            }
+        }
 
         // Both files live beside the running .exe.
         public string AnimalsFilePath { get; } = "animals.txt";

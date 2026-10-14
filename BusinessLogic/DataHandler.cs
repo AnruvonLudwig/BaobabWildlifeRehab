@@ -11,6 +11,6 @@ namespace BaobabWildlifeRehab.BusinessLogic
         private readonly AnimalData data = new AnimalData();
 
         // The grid binds to this once; it updates automatically after add/update/delete.
-        public BindingSource DataSource => data.DataSource;
+        public BindingSource Source => data.Source;
     }
 }

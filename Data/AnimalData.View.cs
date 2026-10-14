@@ -9,6 +9,8 @@ namespace BaobabWildlifeRehab.Data
         public int Load()
         {
             // TODO
+            // IMPORTANT USE: source NOT Source!
+            isLoaded = true;
             throw new NotImplementedException();
 
         }
