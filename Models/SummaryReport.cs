@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BaobabWildlifeRehab.Models
 {
-    internal class SummaryReport
+    public class SummaryReport
     {
         public SummaryReport(int totalAnimals, double? averageAge, double? averageRecoveryScore, Dictionary<string, int> statusCounts)
         {

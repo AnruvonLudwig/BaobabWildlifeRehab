@@ -1,7 +1,7 @@
 namespace BaobabWildlifeRehab.Models
 {
     // One animal record (one line of animals.txt).
-    internal class Animal
+    public class Animal
     {
         public Animal(string id, string name, string species, int age, int recoveryScore, string status, string housingUnit)
         {
