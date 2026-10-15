@@ -23,6 +23,8 @@ namespace BaobabWildlifeRehab.Data
                 }
             }
 
+            DataSource.DataSource = animals;
+
             return skippedLines;
         }
 
