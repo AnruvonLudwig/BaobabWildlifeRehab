@@ -11,7 +11,7 @@ namespace BaobabWildlifeRehab.Data
             int skippedLines = 0;                                               
             List<Animal> animals = new List<Animal>();
 
-            foreach (string line in File.ReadAllLines(SummaryFilePath))
+            foreach (string line in File.ReadAllLines(AnimalsFilePath))
             {
                 if (TryParseLine(line, out Animal animal))
                 {
