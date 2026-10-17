@@ -1,7 +1,7 @@
 namespace BaobabWildlifeRehab.BusinessLogic
 {
     // Business layer - logic shared by Add and Update
-    public partial class DataHandler
+    internal partial class DataHandler
     {
         // Validates Name, Species, Age and Score (trimmed) for BOTH Add and Update.
         // Throws ValidationException naming the field. Returns the cleaned values.
