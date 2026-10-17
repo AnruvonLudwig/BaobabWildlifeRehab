@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridView dgvAnimals;
+            //DataGridView dgvAnimals;
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
