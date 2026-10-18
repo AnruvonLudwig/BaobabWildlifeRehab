@@ -25,9 +25,48 @@ namespace BaobabWildlifeRehab.Data
         // Tries to convert a file line to an Animal; returns false if the line is malformed.
         public bool TryParseLine(string line, out Animal animal)
         {
-            // TODO
-            throw new NotImplementedException();
-        }
+            animal = null;
+
+
+            // Check for null or whitespace line
+            if (string.IsNullOrWhiteSpace(line))
+                return false;
+
+            string[] parts = line.Split('|');
+
+            // A valid record must contain exactly 7 fields
+            if (parts.Length != 7)
+                return false;
+
+            // Remove unnecessary whitespace
+            for (int i = 0; i < parts.Length; i++)
+            {
+                parts[i] = parts[i].Trim();
+            }
+
+            // Check required text fields
+            if (string.IsNullOrWhiteSpace(parts[0]) || string.IsNullOrWhiteSpace(parts[1]) || string.IsNullOrWhiteSpace(parts[2]) || string.IsNullOrWhiteSpace(parts[5]) || string.IsNullOrWhiteSpace(parts[6]))
+            {
+                return false;
+            }
+
+            // Check that Age and RecoveryScore are valid integers
+            if (!int.TryParse(parts[3], out int age))
+                return false;
+
+            if (!int.TryParse(parts[4], out int recoveryScore))
+                return false;
+
+            // Check that numeric values are within sensible ranges
+            if (age < 0 || recoveryScore < 0 || recoveryScore > 100)
+                return false;
+
+            // Construct the Animal only after validation succeeds
+            animal = new Animal(parts[0], parts[1], parts[2], age, recoveryScore, parts[5], parts[6]);
+
+            return true;
 
     }
+
+}
 }
