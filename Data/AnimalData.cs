@@ -18,8 +18,16 @@ namespace BaobabWildlifeRehab.Data
         // Converts an Animal to one pipe-separated file line.
         public string ToLine(Animal animal)
         {
-            // TODO
-            throw new NotImplementedException();
+            return string.Join("|", new[]
+            {
+                animal.Id,
+                animal.Name,
+                animal.Species,
+                animal.Age.ToString(),
+                animal.RecoveryScore.ToString(),
+                animal.Status,
+                animal.HousingUnit
+            });
         }
 
         // Tries to convert a file line to an Animal; returns false if the line is malformed.

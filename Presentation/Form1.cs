@@ -78,7 +78,6 @@ namespace BaobabWildlifeRehab
             lblTotalAnimals.Text = "Total animals: -";
             lblAverageAge.Text = "Average age (years): -";
             lblAverageScore.Text = "Average recovery score: -";
-
             lblCriticalCount.Text = "Critical: -";
             lblSeriousCount.Text = "Serious: -";
             lblStableCount.Text = "Stable: -";
@@ -94,38 +93,19 @@ namespace BaobabWildlifeRehab
 
                 // Update the labels with the summary report data
 
-                lblTotalAnimals.Text =
-                    $"Total animals: {report.TotalAnimals}";
-
-                lblAverageAge.Text =
-                    $"Average age (years): {FormatAverage(report.AverageAge)}";
-
-                lblAverageScore.Text =
-                    $"Average recovery score: " +
-                    $"{FormatAverage(report.AverageRecoveryScore)}";
-
-                lblCriticalCount.Text =
-                    $"Critical: {report.StatusCounts["Critical"]}";
-
-                lblSeriousCount.Text =
-                    $"Serious: {report.StatusCounts["Serious"]}";
-
-                lblStableCount.Text =
-                    $"Stable: {report.StatusCounts["Stable"]}";
-
-                lblRecoveringCount.Text =
-                    $"Recovering: {report.StatusCounts["Recovering"]}";
-
-                lblReleaseReadyCount.Text =
-                    $"Release-Ready: {report.StatusCounts["Release-Ready"]}";
+                lblTotalAnimals.Text = $"Total animals: {report.TotalAnimals}";
+                lblAverageAge.Text = $"Average age (years): {FormatAverage(report.AverageAge)}";
+                lblAverageScore.Text = $"Average recovery score: " + $"{FormatAverage(report.AverageRecoveryScore)}";
+                lblCriticalCount.Text = $"Critical: {report.StatusCounts["Critical"]}";
+                lblSeriousCount.Text = $"Serious: {report.StatusCounts["Serious"]}";
+                lblStableCount.Text = $"Stable: {report.StatusCounts["Stable"]}";
+                lblRecoveringCount.Text = $"Recovering: {report.StatusCounts["Recovering"]}";
+                lblReleaseReadyCount.Text = $"Release-Ready: {report.StatusCounts["Release-Ready"]}";
+            
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    ex.Message,
-                    "Unable to Generate Summary",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Unable to Generate Summary", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
