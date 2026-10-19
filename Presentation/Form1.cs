@@ -10,11 +10,10 @@ namespace BaobabWildlifeRehab
         public Form1()
         {
             InitializeComponent();
-
-            
+            SetAddMode();
         }
 
-        
+
 
         private void txtAnimaliD_TextChanged(object sender, EventArgs e)
         {
@@ -42,21 +41,6 @@ namespace BaobabWildlifeRehab
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSaveChanges_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
@@ -111,11 +95,6 @@ namespace BaobabWildlifeRehab
 
         }
 
-        private void dgvAnimals_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        
     }
 }

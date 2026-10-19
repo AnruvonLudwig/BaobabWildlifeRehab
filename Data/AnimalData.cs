@@ -1,4 +1,4 @@
-using BaobabWildlifeRehab.Data;
+﻿using BaobabWildlifeRehab.Data;
 using System.Windows.Forms;
 using BaobabWildlifeRehab.Models;
 
@@ -15,6 +15,7 @@ namespace BaobabWildlifeRehab.Data
         public string AnimalsFilePath { get; } = Path.Combine(AppContext.BaseDirectory, "animals.txt");
         public string SummaryFilePath { get; } = "summary.txt";
 
+        // Converts an Animal to one pipe-separated file line.
         public string ToLine(Animal animal)
         {
             return $"{animal.Id}|{animal.Name}|{animal.Species}|{animal.Age}|{animal.RecoveryScore}|{animal.Status}|{animal.HousingUnit}";
@@ -63,8 +64,6 @@ namespace BaobabWildlifeRehab.Data
             animal = new Animal(parts[0], parts[1], parts[2], age, recoveryScore, parts[5], parts[6]);
 
             return true;
-
+        }
     }
-
-}
 }

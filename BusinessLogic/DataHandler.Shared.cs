@@ -9,15 +9,38 @@ namespace BaobabWildlifeRehab.BusinessLogic
             string ageText, string scoreText,
             out string cleanName, out string cleanSpecies, out int age, out int score)
         {
-            // TODO
-            
-            throw new NotImplementedException();
+            cleanName = name.Trim();
+            cleanSpecies = species.Trim();
+
+            if (cleanName == "")
+                throw new ValidationException("Name is required.", "Name");
+
+            if (cleanSpecies == "")
+                throw new ValidationException("Species is required.", "Species");
+
+            if (cleanName.Contains("|") || cleanName.Contains("\r") || cleanName.Contains("\n"))
+                throw new ValidationException("Name cannot contain | or a line break.", "Name");
+
+            if (cleanSpecies.Contains("|") || cleanSpecies.Contains("\r") || cleanSpecies.Contains("\n"))
+                throw new ValidationException("Species cannot contain | or a line break.", "Species");
+
+            if (!int.TryParse(ageText, out age))
+                throw new ValidationException("Age must be a whole number.", "Age");
+
+            if (age < 0)
+                throw new ValidationException("Age cannot be negative.", "Age");
+
+            if (!int.TryParse(scoreText, out score))
+                throw new ValidationException("Recovery score must be a whole number.", "Recovery Score");
+
+            if (score < 0 || score > 100)
+                throw new ValidationException("Recovery score must be between 0 and 100.", "Recovery Score");
         }
 
         // Maps a recovery score (0-100) to its status and housing unit.
         /// <summary>
         /// To use: (string status, string housingUnit) = Classify(score);
-        /// 
+        ///
         /// ... = status;
         /// ...
         /// </summary>

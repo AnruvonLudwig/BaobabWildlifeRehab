@@ -8,7 +8,7 @@ namespace BaobabWildlifeRehab.Data
         // fills DataSource and returns the skipped-line count.
         public int Load()
         {
-            int skippedLines = 0;                                               
+            int skippedLines = 0;
             List<Animal> animals = new List<Animal>();
 
             foreach (string line in File.ReadAllLines(AnimalsFilePath))
@@ -28,12 +28,6 @@ namespace BaobabWildlifeRehab.Data
             return skippedLines;
         }
 
-        // finds animal by id
-        public Animal? FindById(string id)
-        {
-            // TODO
-            throw new NotImplementedException();
 
-        }
     }
 }

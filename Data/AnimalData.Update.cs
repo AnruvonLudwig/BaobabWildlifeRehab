@@ -2,15 +2,53 @@ using BaobabWildlifeRehab.Models;
 
 namespace BaobabWildlifeRehab.Data
 {
-    // Data layer - Feature: Add
+    // Data layer - Feature: Update
     internal partial class AnimalData
     {
-        // rewrites the file and replaces animal in DataSource.
+        public Animal? FindById(string id)
+        {
+            foreach (Animal animal in DataSource)
+            {
+                if (animal.Id == id)
+                    return animal;
+            }
+
+            return null;
+        }
+
         public void Update(Animal animal)
         {
-            // TODO
-            throw new NotImplementedException();
+            Animal? currentAnimal = FindById(animal.Id);
 
+            if (currentAnimal == null)
+                throw new DataAccessException("Animal ID was not found.");
+
+            currentAnimal.Name = animal.Name;
+            currentAnimal.Species = animal.Species;
+            currentAnimal.Age = animal.Age;
+            currentAnimal.RecoveryScore = animal.RecoveryScore;
+            currentAnimal.Status = animal.Status;
+            currentAnimal.HousingUnit = animal.HousingUnit;
+
+            List<string> lines = new List<string>();
+
+            foreach (Animal current in DataSource)
+                lines.Add(ToLine(current));
+
+            try
+            {
+                File.WriteAllLines(AnimalsFilePath, lines);
+            }
+            catch (UnauthorizedAccessException)
+            {
+                throw new DataAccessException("You do not have permission to update animals.txt.");
+            }
+            catch (IOException)
+            {
+                throw new DataAccessException("Could not update animals.txt.");
+            }
+
+            DataSource.ResetBindings(false);
         }
     }
 }
