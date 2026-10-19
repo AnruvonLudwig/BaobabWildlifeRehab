@@ -54,7 +54,15 @@ namespace BaobabWildlifeRehab
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            /*lblTotalAnimals.Text = "Total animals: -";
+            lblAverageAge.Text = "Average age (years): -";
+            lblAverageScore.Text = "Average recovery score: -";
+            lblCriticalCount.Text = "Critical: -";
+            lblSeriousCount.Text = "Serious: -";
+            lblStableCount.Text = "Stable: -";
+            lblRecoveringCount.Text = "Recovering: -";
+            lblReleaseReadyCount.Text = "Release-Ready: -";
+        */
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -163,3 +171,4 @@ namespace BaobabWildlifeRehab
         
     }
 }
+ 
