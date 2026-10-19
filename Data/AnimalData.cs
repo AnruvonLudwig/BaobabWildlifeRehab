@@ -13,7 +13,7 @@ namespace BaobabWildlifeRehab.Data
 
         // Both files live beside the running .exe.
         public string AnimalsFilePath { get; } = Path.Combine(AppContext.BaseDirectory, "animals.txt");
-        public string SummaryFilePath { get; } = "summary.txt";
+        public string SummaryFilePath { get; } = Path.Combine(AppContext.BaseDirectory,"summary.txt");
 
         // Converts an Animal to one pipe-separated file line.
         public string ToLine(Animal animal)
@@ -64,6 +64,16 @@ namespace BaobabWildlifeRehab.Data
             animal = new Animal(parts[0], parts[1], parts[2], age, recoveryScore, parts[5], parts[6]);
 
             return true;
+        }
+        public Animal? FindById(string id)
+        {
+            foreach (Animal animal in DataSource)
+            {
+                if (animal.Id == id)
+                    return animal;
+            }
+
+            return null;
         }
     }
 }

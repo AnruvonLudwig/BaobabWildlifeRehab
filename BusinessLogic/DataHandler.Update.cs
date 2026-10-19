@@ -5,10 +5,6 @@ namespace BaobabWildlifeRehab.BusinessLogic
     // Business layer - Feature: Update
     internal partial class DataHandler
     {
-        public Animal? FindById(string id)
-        {
-            return data.FindById(id);
-        }
 
         public Animal Update(string existingId, string name, string species, string ageText, string scoreText)
         {

@@ -5,16 +5,6 @@ namespace BaobabWildlifeRehab.Data
     // Data layer - Feature: Update
     internal partial class AnimalData
     {
-        public Animal? FindById(string id)
-        {
-            foreach (Animal animal in DataSource)
-            {
-                if (animal.Id == id)
-                    return animal;
-            }
-
-            return null;
-        }
 
         public void Update(Animal animal)
         {

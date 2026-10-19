@@ -52,6 +52,11 @@ namespace BaobabWildlifeRehab.BusinessLogic
             if (score <= 79) return ("Recovering", "Outdoor Enclosure");
             return ("Release-Ready", "Pre-Release Camp");
         }
+
+        public Animal? FindById(string id)
+        {
+            return data.FindById(id);
+        }
     }
 
 
