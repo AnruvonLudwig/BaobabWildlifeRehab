@@ -41,11 +41,6 @@ namespace BaobabWildlifeRehab
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private string FormatAverage(double? average)
         {
             return average.HasValue

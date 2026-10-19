@@ -1,3 +1,5 @@
+using BaobabWildlifeRehab.Models;
+
 namespace BaobabWildlifeRehab.BusinessLogic
 {
     // Business layer - logic shared by Add and Update
