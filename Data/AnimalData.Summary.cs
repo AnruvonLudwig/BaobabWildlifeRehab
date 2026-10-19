@@ -11,8 +11,10 @@ namespace BaobabWildlifeRehab.Data
         {
             try
             {
+                // Write the summary to the file
                 File.WriteAllText(SummaryFilePath, summary);
             }
+            // Catch any IO exceptions and throw a DataAccessException
             catch (IOException)
             {
                 throw new DataAccessException("Failed to write the summary to the file.");
