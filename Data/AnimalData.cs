@@ -12,18 +12,16 @@ namespace BaobabWildlifeRehab.Data
         public BindingSource DataSource { get; } = new BindingSource();
 
         // Both files live beside the running .exe.
-        public string AnimalsFilePath { get; } = "animals.txt";
+        public string AnimalsFilePath { get; } = Path.Combine(AppContext.BaseDirectory, "animals.txt");
         public string SummaryFilePath { get; } = "summary.txt";
 
-        // Converts an Animal to one pipe-separated file line.
         public string ToLine(Animal animal)
         {
-            // TODO
-            throw new NotImplementedException();
+            return $"{animal.Id}|{animal.Name}|{animal.Species}|{animal.Age}|{animal.RecoveryScore}|{animal.Status}|{animal.HousingUnit}";
         }
 
         // Tries to convert a file line to an Animal; returns false if the line is malformed.
-        public bool TryParseLine(string line, out Animal animal)
+        public bool TryParseLine(string line, out Animal? animal)
         {
             animal = null;
 
