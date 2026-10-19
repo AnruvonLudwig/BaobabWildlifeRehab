@@ -23,8 +23,8 @@ namespace BaobabWildlifeRehab.Data
                 animal.Id,
                 animal.Name,
                 animal.Species,
-                animal.Age.ToString(),
-                animal.RecoveryScore.ToString(),
+                animal.Age.ToString(System.Globalization.CultureInfo.InvariantCulture),
+                animal.RecoveryScore.ToString(System.Globalization.CultureInfo.InvariantCulture),
                 animal.Status,
                 animal.HousingUnit
             });
