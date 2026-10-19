@@ -1,4 +1,5 @@
 using BaobabWildlifeRehab.Models;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace BaobabWildlifeRehab.BusinessLogic
 {
@@ -6,16 +7,23 @@ namespace BaobabWildlifeRehab.BusinessLogic
     internal partial class DataHandler
     {
         //Validates and Creates new Animal and calls data.add
-        public Animal Add(string id, string name, string species, string ageText, string scoreText)
+        public Animal Add(string id,string name, string species, string ageText, string scoreText)
         {
-            throw new NotImplementedException();
+            int age;
+            int score;
 
-            //validate and create animal
-            //ValidateCommonFields(/*peram*/)
+            //Validation
+            if (id == String.Empty) throw new ValidationException("Field not filled in!", "AnimalID");
+            ValidateCommonFields(name, species, ageText, scoreText,out name,out species,out age,out score); 
 
-            //throw exception and validate
-            //data.Add(/*animal*/);
-            //return /*animal*/
+            if (data.FindById(id) != null) throw new ValidationException("Animal exists! Duplicate ID", "AnimalID");
+
+            (string status, string housingUnit) = Classify(score);
+
+            Animal animal = new Animal(id, name, species, age, score, status, housingUnit);
+
+            data.Add(animal);
+            return animal;
         }
     }
 }

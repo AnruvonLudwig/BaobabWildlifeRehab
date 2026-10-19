@@ -28,12 +28,6 @@ namespace BaobabWildlifeRehab.Data
             return skippedLines;
         }
 
-        // finds animal by id
-        public Animal? FindById(string id)
-        {
-            // TODO
-            throw new NotImplementedException();
-
-        }
+       
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //DataGridView dgvAnimals;
+           
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -59,22 +59,6 @@
             dgvAnimals = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             SuspendLayout();
-            // 
-            // dgvAnimals
-            // 
-            dgvAnimals.AllowUserToAddRows = false;
-            dgvAnimals.AllowUserToDeleteRows = false;
-            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
-            dgvAnimals.GridColor = Color.Cyan;
-            dgvAnimals.Location = new Point(206, 12);
-            dgvAnimals.MultiSelect = false;
-            dgvAnimals.Name = "dgvAnimals";
-            dgvAnimals.ReadOnly = true;
-            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAnimals.Size = new Size(744, 168);
-            dgvAnimals.TabIndex = 12;
-            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
             // 
             // Id
             // 
@@ -312,6 +296,22 @@
             lblAverageAge.TabIndex = 20;
             lblAverageAge.Text = "label8";
             lblAverageAge.Click += lblAverageAge_Click;
+            // 
+            // dgvAnimals
+            // 
+            dgvAnimals.AllowUserToAddRows = false;
+            dgvAnimals.AllowUserToDeleteRows = false;
+            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
+            dgvAnimals.GridColor = Color.Cyan;
+            dgvAnimals.Location = new Point(206, 12);
+            dgvAnimals.MultiSelect = false;
+            dgvAnimals.Name = "dgvAnimals";
+            dgvAnimals.ReadOnly = true;
+            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnimals.Size = new Size(744, 168);
+            dgvAnimals.TabIndex = 12;
+            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
             // 
             // Form1
             // 
