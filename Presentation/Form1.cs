@@ -45,15 +45,7 @@ namespace BaobabWildlifeRehab
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
 
-            // Reset the labels before generating a new summary.
-            lblTotalAnimals.Text = "Total animals: -";
-            lblAverageAge.Text = "Average age (years): -";
-            lblAverageScore.Text = "Average recovery score: -";
-            lblCriticalCount.Text = "Critical: -";
-            lblSeriousCount.Text = "Serious: -";
-            lblStableCount.Text = "Stable: -";
-            lblRecoveringCount.Text = "Recovering: -";
-            lblReleaseReadyCount.Text = "Release-Ready: -";
+
 
             try
             {
@@ -64,14 +56,14 @@ namespace BaobabWildlifeRehab
 
                 // Update the labels with the summary report data
 
-                lblTotalAnimals.Text = $"Total animals: {report.TotalAnimals}";
-                lblAverageAge.Text = $"Average age (years): {report.FormatAverage(report.AverageAge)}";
-                lblAverageScore.Text = $"Average recovery score: " + $"{report.FormatAverage(report.AverageRecoveryScore)}";
-                lblCriticalCount.Text = $"Critical: {report.StatusCounts["Critical"]}";
-                lblSeriousCount.Text = $"Serious: {report.StatusCounts["Serious"]}";
-                lblStableCount.Text = $"Stable: {report.StatusCounts["Stable"]}";
-                lblRecoveringCount.Text = $"Recovering: {report.StatusCounts["Recovering"]}";
-                lblReleaseReadyCount.Text = $"Release-Ready: {report.StatusCounts["Release-Ready"]}";
+                lblTotalAnimalsSummary.Text = $"Total animals: {report.TotalAnimals}";
+                lblAverageAgeSummary.Text = $"Average age (years): {report.FormatAverage(report.AverageAge)}";
+                lblAverageScoreSummary.Text = $"Average recovery score: " + $"{report.FormatAverage(report.AverageRecoveryScore)}";
+                lblCriticalCountSummary.Text = $"Critical: {report.StatusCounts["Critical"]}";
+                lblSeriousCountSummary.Text = $"Serious: {report.StatusCounts["Serious"]}";
+                lblStableCountSummary.Text = $"Stable: {report.StatusCounts["Stable"]}";
+                lblRecoveryCountSummary.Text = $"Recovering: {report.StatusCounts["Recovering"]}";
+                lblReleaseReadyCountSummary.Text = $"Release-Ready: {report.StatusCounts["Release-Ready"]}";
 
             }
             catch (Exception ex)
@@ -149,7 +141,35 @@ namespace BaobabWildlifeRehab
             }
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalAnimalsSummary_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  

@@ -49,7 +49,7 @@ namespace BaobabWildlifeRehab
 
             Animal? animal = handler.FindById(id);
 
-            if (animal == null)
+            if (animal != null)
             {
                 SetAddMode();
                 txtSearchID.Text = id;
