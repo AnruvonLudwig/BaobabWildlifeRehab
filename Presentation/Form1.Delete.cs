@@ -11,9 +11,14 @@ namespace BaobabWildlifeRehab
             string id = (string)row.Cells[1].Value;
             if (id == string.Empty || id == null)
             {
-                MessageBox.Show("No ID given, nothing to delete.");
+                MessageBox.Show("No row to delete is selected, Please select one.");
                 return;
             }
+
+            DialogResult result = MessageBox.Show($"Delete {id} ({(string)row.Cells[2].Value})? This cannot be undone","Confirm Delete",MessageBoxButtons.YesNo);
+
+            if (result != DialogResult.Yes) return;
+
             try
             {
                 handler.Delete(id);
