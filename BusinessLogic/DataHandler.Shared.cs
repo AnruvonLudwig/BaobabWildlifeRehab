@@ -1,3 +1,5 @@
+using BaobabWildlifeRehab.Models;
+
 namespace BaobabWildlifeRehab.BusinessLogic
 {
     // Business layer - logic shared by Add and Update
@@ -9,29 +11,38 @@ namespace BaobabWildlifeRehab.BusinessLogic
             string ageText, string scoreText,
             out string cleanName, out string cleanSpecies, out int age, out int score)
         {
-            //Validate empty
-            if (name == String.Empty) throw new ValidationException("Field not filled in!", "Name");
-            if (species == String.Empty) throw new ValidationException("Field not filled in!", "Species");
-            if (ageText == String.Empty) throw new ValidationException("Field not filled in!", "age");
-            if (scoreText == String.Empty) throw new ValidationException("Field not filled in!", "Score");
-
-            //convert
-            if (!int.TryParse(ageText, out age)) throw new ValidationException($"{age} is not a number!", "Age");
-            if (!int.TryParse(scoreText, out score)) throw new ValidationException($"{score} is not a number!", "Score");
-
-            if ( age < 0) throw new ValidationException($"{age} is a negative!", "Age");
-            if (score < 0 || score > 100) throw new ValidationException($"{score} is not a range 0-100", "Score");
-
             cleanName = name.Trim();
             cleanSpecies = species.Trim();
-            
-            
+
+            if (cleanName == "")
+                throw new ValidationException("Name is required.", "Name");
+
+            if (cleanSpecies == "")
+                throw new ValidationException("Species is required.", "Species");
+
+            if (cleanName.Contains("|") || cleanName.Contains("\r") || cleanName.Contains("\n"))
+                throw new ValidationException("Name cannot contain | or a line break.", "Name");
+
+            if (cleanSpecies.Contains("|") || cleanSpecies.Contains("\r") || cleanSpecies.Contains("\n"))
+                throw new ValidationException("Species cannot contain | or a line break.", "Species");
+
+            if (!int.TryParse(ageText, out age))
+                throw new ValidationException("Age must be a whole number.", "Age");
+
+            if (age < 0)
+                throw new ValidationException("Age cannot be negative.", "Age");
+
+            if (!int.TryParse(scoreText, out score))
+                throw new ValidationException("Recovery score must be a whole number.", "Recovery Score");
+
+            if (score < 0 || score > 100)
+                throw new ValidationException("Recovery score must be between 0 and 100.", "Recovery Score");
         }
 
         // Maps a recovery score (0-100) to its status and housing unit.
         /// <summary>
         /// To use: (string status, string housingUnit) = Classify(score);
-        /// 
+        ///
         /// ... = status;
         /// ...
         /// </summary>
@@ -42,6 +53,11 @@ namespace BaobabWildlifeRehab.BusinessLogic
             if (score <= 59) return ("Stable", "Recovery Ward");
             if (score <= 79) return ("Recovering", "Outdoor Enclosure");
             return ("Release-Ready", "Pre-Release Camp");
+        }
+
+        public Animal? FindById(string id)
+        {
+            return data.FindById(id);
         }
     }
 

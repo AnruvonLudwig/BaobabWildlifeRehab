@@ -1,4 +1,4 @@
-using BaobabWildlifeRehab.Data;
+﻿using BaobabWildlifeRehab.Data;
 using System.Windows.Forms;
 using BaobabWildlifeRehab.Models;
 
@@ -12,26 +12,17 @@ namespace BaobabWildlifeRehab.Data
         public BindingSource DataSource { get; } = new BindingSource();
 
         // Both files live beside the running .exe.
-        public string AnimalsFilePath { get; } = "animals.txt";
-        public string SummaryFilePath { get; } = "summary.txt";
+        public string AnimalsFilePath { get; } = Path.Combine(AppContext.BaseDirectory, "animals.txt");
+        public string SummaryFilePath { get; } = Path.Combine(AppContext.BaseDirectory,"summary.txt");
 
         // Converts an Animal to one pipe-separated file line.
         public string ToLine(Animal animal)
         {
-            return string.Join("|", new[]
-            {
-                animal.Id,
-                animal.Name,
-                animal.Species,
-                animal.Age.ToString(System.Globalization.CultureInfo.InvariantCulture),
-                animal.RecoveryScore.ToString(System.Globalization.CultureInfo.InvariantCulture),
-                animal.Status,
-                animal.HousingUnit
-            });
+            return $"{animal.Id}|{animal.Name}|{animal.Species}|{animal.Age}|{animal.RecoveryScore}|{animal.Status}|{animal.HousingUnit}";
         }
 
         // Tries to convert a file line to an Animal; returns false if the line is malformed.
-        public bool TryParseLine(string line, out Animal animal)
+        public bool TryParseLine(string line, out Animal? animal)
         {
             animal = null;
 
@@ -73,17 +64,16 @@ namespace BaobabWildlifeRehab.Data
             animal = new Animal(parts[0], parts[1], parts[2], age, recoveryScore, parts[5], parts[6]);
 
             return true;
-
-    }
-
-        // finds animal by id
+        }
         public Animal? FindById(string id)
         {
-            if (!DataSource.Cast<Animal>().Any(a => a.Id == id)) return null;
-            return DataSource.Cast<Animal>().First(a => a.Id == id);
+            foreach (Animal animal in DataSource)
+            {
+                if (animal.Id == id)
+                    return animal;
+            }
 
+            return null;
         }
-
-
     }
 }
