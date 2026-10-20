@@ -10,7 +10,7 @@ namespace BaobabWildlifeRehab.BusinessLogic
         {
 
             //Validate
-            if (data.FindById(id) == null) throw new ValidationException("ID not Found",FieldNames.AnimalID);
+            if (data.FindById(id) == null) throw new ValidationException($"ID({id}) not Found",FieldNames.AnimalID);
 
             data.Delete(id);
         }

@@ -14,6 +14,11 @@ namespace BaobabWildlifeRehab.Data
 
             try
             {
+                //If file is deleted add it back.
+                if (!File.Exists(AnimalsFilePath))
+                {
+                    File.WriteAllLines(AnimalsFilePath, DataSource.Cast<Animal>().Select(a => ToLine(a)).ToList());
+                }
                 //First write. If this throws, the list is untouched.
                 File.AppendAllText(AnimalsFilePath, ToLine(animal));
             }
