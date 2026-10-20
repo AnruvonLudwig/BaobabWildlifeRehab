@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridView dgvAnimals;
+            //DataGridView dgvAnimals;
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -220,11 +220,11 @@
             // lblTotalAnimals
             // 
             lblTotalAnimals.AutoSize = true;
-            lblTotalAnimals.Location = new Point(12, 196);
+            lblTotalAnimals.Location = new Point(18, 389);
             lblTotalAnimals.Name = "lblTotalAnimals";
-            lblTotalAnimals.Size = new Size(38, 15);
+            lblTotalAnimals.Size = new Size(76, 15);
             lblTotalAnimals.TabIndex = 13;
-            lblTotalAnimals.Text = "label1";
+            lblTotalAnimals.Text = "TotalAnimals";
             lblTotalAnimals.Click += lblTotalAnimals_Click;
             // 
             // lblReleaseReadyCount
@@ -260,11 +260,11 @@
             // lblSeriousCount
             // 
             lblSeriousCount.AutoSize = true;
-            lblSeriousCount.Location = new Point(56, 196);
+            lblSeriousCount.Location = new Point(122, 389);
             lblSeriousCount.Name = "lblSeriousCount";
-            lblSeriousCount.Size = new Size(38, 15);
+            lblSeriousCount.Size = new Size(78, 15);
             lblSeriousCount.TabIndex = 17;
-            lblSeriousCount.Text = "label5";
+            lblSeriousCount.Text = "SeriousCount";
             lblSeriousCount.Click += lblSeriousCount_Click;
             // 
             // lblCriticalCount
