@@ -70,15 +70,6 @@ namespace BaobabWildlifeRehab
 
         }
 
-        private string FormatAverage(double? average)
-        {
-            return average.HasValue
-                ? average.Value.ToString(
-                    "F2",
-                    System.Globalization.CultureInfo.InvariantCulture)
-                : "N/A";
-        }
-
         private void btnGenerateSummary_Click(object sender, EventArgs e)
         {
 
