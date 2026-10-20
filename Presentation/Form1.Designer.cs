@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-           
+            //DataGridView dgvAnimals;
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -69,8 +69,8 @@
             // 
             // colName
             // 
-            colName.DataPropertyName = "colName";
-            colName.HeaderText = "colName";
+            colName.DataPropertyName = "Name";
+            colName.HeaderText = "Name";
             colName.Name = "colName";
             colName.ReadOnly = true;
             // 
@@ -155,7 +155,7 @@
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 5;
-            btnAdd.Text = "button1";
+            btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
@@ -165,7 +165,7 @@
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(75, 23);
             btnSaveChanges.TabIndex = 6;
-            btnSaveChanges.Text = "button2";
+            btnSaveChanges.Text = "Save Changes";
             btnSaveChanges.UseVisualStyleBackColor = true;
             btnSaveChanges.Click += btnSaveChanges_Click;
             // 
@@ -175,7 +175,7 @@
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 23);
             btnClear.TabIndex = 7;
-            btnClear.Text = "button3";
+            btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
             btnClear.Click += btnClear_Click;
             // 
@@ -185,7 +185,7 @@
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(75, 23);
             btnDelete.TabIndex = 8;
-            btnDelete.Text = "button4";
+            btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
@@ -195,7 +195,7 @@
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(75, 23);
             btnSearch.TabIndex = 9;
-            btnSearch.Text = "button5";
+            btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += btnSearch_Click;
             // 
@@ -220,11 +220,11 @@
             // lblTotalAnimals
             // 
             lblTotalAnimals.AutoSize = true;
-            lblTotalAnimals.Location = new Point(12, 196);
+            lblTotalAnimals.Location = new Point(18, 389);
             lblTotalAnimals.Name = "lblTotalAnimals";
-            lblTotalAnimals.Size = new Size(38, 15);
+            lblTotalAnimals.Size = new Size(76, 15);
             lblTotalAnimals.TabIndex = 13;
-            lblTotalAnimals.Text = "label1";
+            lblTotalAnimals.Text = "TotalAnimals";
             lblTotalAnimals.Click += lblTotalAnimals_Click;
             // 
             // lblReleaseReadyCount
@@ -260,11 +260,11 @@
             // lblSeriousCount
             // 
             lblSeriousCount.AutoSize = true;
-            lblSeriousCount.Location = new Point(56, 196);
+            lblSeriousCount.Location = new Point(122, 389);
             lblSeriousCount.Name = "lblSeriousCount";
-            lblSeriousCount.Size = new Size(38, 15);
+            lblSeriousCount.Size = new Size(78, 15);
             lblSeriousCount.TabIndex = 17;
-            lblSeriousCount.Text = "label5";
+            lblSeriousCount.Text = "SeriousCount";
             lblSeriousCount.Click += lblSeriousCount_Click;
             // 
             // lblCriticalCount
@@ -311,7 +311,7 @@
             dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAnimals.Size = new Size(744, 168);
             dgvAnimals.TabIndex = 12;
-            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
+            dgvAnimals.CellClick += dgvAnimals_CellClick;
             // 
             // Form1
             // 
