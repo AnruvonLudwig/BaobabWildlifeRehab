@@ -11,8 +11,7 @@ namespace BaobabWildlifeRehab
         public Form1()
         {
             InitializeComponent();
-
-
+            SetAddMode();
         }
 
 
@@ -38,31 +37,6 @@ namespace BaobabWildlifeRehab
         }
 
         private void txtRecoveryScore_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void btnSaveChanges_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            /*lblTotalAnimals.Text = "Total animals: -";
-            lblAverageAge.Text = "Average age (years): -";
-            lblAverageScore.Text = "Average recovery score: -";
-            lblCriticalCount.Text = "Critical: -";
-            lblSeriousCount.Text = "Serious: -";
-            lblStableCount.Text = "Stable: -";
-            lblRecoveringCount.Text = "Recovering: -";
-            lblReleaseReadyCount.Text = "Release-Ready: -";
-        */
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
@@ -160,9 +134,27 @@ namespace BaobabWildlifeRehab
 
         }
 
-        private void dgvAnimals_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FocusErrorField(FieldNames fieldName)
         {
-           
+            switch (fieldName)
+            {
+                case FieldNames.AnimalID:
+                    txtAnimaliD.Focus();
+                    break;
+                case FieldNames.Name:
+                    txtName.Focus();
+                    break;
+                case FieldNames.Species:
+                    txtSpecies.Focus();
+                    break;
+                case FieldNames.Age:
+                    txtAge.Focus();
+                    break;
+                case FieldNames.RecoveryScore:
+                    txtRecoveryScore.Focus();
+                    break;
+
+            }
         }
 
 
