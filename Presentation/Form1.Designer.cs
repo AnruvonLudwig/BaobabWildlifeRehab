@@ -27,8 +27,7 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
-            DataGridView dgvAnimals;
+        { 
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -76,28 +75,11 @@
             pictureBox1 = new PictureBox();
             lblSearchByID = new Label();
             dgvAnimals = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             SuspendLayout();
-            // 
-            // dgvAnimals
-            // 
-            dgvAnimals.AllowUserToAddRows = false;
-            dgvAnimals.AllowUserToDeleteRows = false;
-            dgvAnimals.BackgroundColor = Color.DarkCyan;
-            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
-            dgvAnimals.GridColor = Color.DarkGray;
-            dgvAnimals.Location = new Point(314, 0);
-            dgvAnimals.MultiSelect = false;
-            dgvAnimals.Name = "dgvAnimals";
-            dgvAnimals.ReadOnly = true;
-            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAnimals.Size = new Size(743, 411);
-            dgvAnimals.TabIndex = 12;
-            dgvAnimals.CellClick += dgvAnimals_CellClick;
             // 
             // Id
             // 
@@ -242,9 +224,9 @@
             // 
             // btnGenerateSummary
             // 
-            btnGenerateSummary.Location = new Point(68, 198);
+            btnGenerateSummary.Location = new Point(155, 316);
             btnGenerateSummary.Name = "btnGenerateSummary";
-            btnGenerateSummary.Size = new Size(118, 23);
+            btnGenerateSummary.Size = new Size(233, 23);
             btnGenerateSummary.TabIndex = 10;
             btnGenerateSummary.Text = "Generate Summary";
             btnGenerateSummary.UseVisualStyleBackColor = true;
@@ -261,7 +243,7 @@
             // lblTotalAnimals
             // 
             lblTotalAnimals.AutoSize = true;
-            lblTotalAnimals.Location = new Point(254, 47);
+            lblTotalAnimals.Location = new Point(155, 44);
             lblTotalAnimals.Name = "lblTotalAnimals";
             lblTotalAnimals.Size = new Size(79, 15);
             lblTotalAnimals.TabIndex = 13;
@@ -271,7 +253,7 @@
             // lblReleaseReadyCount
             // 
             lblReleaseReadyCount.AutoSize = true;
-            lblReleaseReadyCount.Location = new Point(254, 178);
+            lblReleaseReadyCount.Location = new Point(155, 175);
             lblReleaseReadyCount.Name = "lblReleaseReadyCount";
             lblReleaseReadyCount.Size = new Size(111, 15);
             lblReleaseReadyCount.TabIndex = 14;
@@ -281,7 +263,7 @@
             // lblRecoveringCount
             // 
             lblRecoveringCount.AutoSize = true;
-            lblRecoveringCount.Location = new Point(254, 236);
+            lblRecoveringCount.Location = new Point(155, 233);
             lblRecoveringCount.Name = "lblRecoveringCount";
             lblRecoveringCount.Size = new Size(102, 15);
             lblRecoveringCount.TabIndex = 15;
@@ -291,7 +273,7 @@
             // lblStableCount
             // 
             lblStableCount.AutoSize = true;
-            lblStableCount.Location = new Point(254, 207);
+            lblStableCount.Location = new Point(155, 204);
             lblStableCount.Name = "lblStableCount";
             lblStableCount.Size = new Size(75, 15);
             lblStableCount.TabIndex = 16;
@@ -301,7 +283,7 @@
             // lblSeriousCount
             // 
             lblSeriousCount.AutoSize = true;
-            lblSeriousCount.Location = new Point(254, 262);
+            lblSeriousCount.Location = new Point(155, 259);
             lblSeriousCount.Name = "lblSeriousCount";
             lblSeriousCount.Size = new Size(81, 15);
             lblSeriousCount.TabIndex = 17;
@@ -311,7 +293,7 @@
             // lblCriticalCount
             // 
             lblCriticalCount.AutoSize = true;
-            lblCriticalCount.Location = new Point(254, 290);
+            lblCriticalCount.Location = new Point(155, 287);
             lblCriticalCount.Name = "lblCriticalCount";
             lblCriticalCount.Size = new Size(80, 15);
             lblCriticalCount.TabIndex = 18;
@@ -321,7 +303,7 @@
             // lblAverageScore
             // 
             lblAverageScore.AutoSize = true;
-            lblAverageScore.Location = new Point(254, 77);
+            lblAverageScore.Location = new Point(155, 74);
             lblAverageScore.Name = "lblAverageScore";
             lblAverageScore.Size = new Size(82, 15);
             lblAverageScore.TabIndex = 19;
@@ -331,7 +313,7 @@
             // lblAverageAge
             // 
             lblAverageAge.AutoSize = true;
-            lblAverageAge.Location = new Point(254, 107);
+            lblAverageAge.Location = new Point(155, 104);
             lblAverageAge.Name = "lblAverageAge";
             lblAverageAge.Size = new Size(74, 15);
             lblAverageAge.TabIndex = 20;
@@ -375,7 +357,7 @@
             // lblCriticalCountSummary
             // 
             lblCriticalCountSummary.AutoSize = true;
-            lblCriticalCountSummary.Location = new Point(458, 290);
+            lblCriticalCountSummary.Location = new Point(359, 287);
             lblCriticalCountSummary.Name = "lblCriticalCountSummary";
             lblCriticalCountSummary.Size = new Size(29, 15);
             lblCriticalCountSummary.TabIndex = 28;
@@ -384,7 +366,7 @@
             // lblSeriousCountSummary
             // 
             lblSeriousCountSummary.AutoSize = true;
-            lblSeriousCountSummary.Location = new Point(458, 262);
+            lblSeriousCountSummary.Location = new Point(359, 259);
             lblSeriousCountSummary.Name = "lblSeriousCountSummary";
             lblSeriousCountSummary.Size = new Size(29, 15);
             lblSeriousCountSummary.TabIndex = 27;
@@ -393,7 +375,7 @@
             // lblRecoveryCountSummary
             // 
             lblRecoveryCountSummary.AutoSize = true;
-            lblRecoveryCountSummary.Location = new Point(458, 236);
+            lblRecoveryCountSummary.Location = new Point(359, 233);
             lblRecoveryCountSummary.Name = "lblRecoveryCountSummary";
             lblRecoveryCountSummary.Size = new Size(29, 15);
             lblRecoveryCountSummary.TabIndex = 26;
@@ -402,7 +384,7 @@
             // lblStableCountSummary
             // 
             lblStableCountSummary.AutoSize = true;
-            lblStableCountSummary.Location = new Point(458, 207);
+            lblStableCountSummary.Location = new Point(359, 204);
             lblStableCountSummary.Name = "lblStableCountSummary";
             lblStableCountSummary.Size = new Size(29, 15);
             lblStableCountSummary.TabIndex = 25;
@@ -411,7 +393,7 @@
             // lblAverageScoreSummary
             // 
             lblAverageScoreSummary.AutoSize = true;
-            lblAverageScoreSummary.Location = new Point(458, 77);
+            lblAverageScoreSummary.Location = new Point(359, 74);
             lblAverageScoreSummary.Name = "lblAverageScoreSummary";
             lblAverageScoreSummary.Size = new Size(29, 15);
             lblAverageScoreSummary.TabIndex = 24;
@@ -420,7 +402,7 @@
             // lblAverageAgeSummary
             // 
             lblAverageAgeSummary.AutoSize = true;
-            lblAverageAgeSummary.Location = new Point(458, 107);
+            lblAverageAgeSummary.Location = new Point(359, 104);
             lblAverageAgeSummary.Name = "lblAverageAgeSummary";
             lblAverageAgeSummary.Size = new Size(29, 15);
             lblAverageAgeSummary.TabIndex = 23;
@@ -429,7 +411,7 @@
             // lblReleaseReadyCountSummary
             // 
             lblReleaseReadyCountSummary.AutoSize = true;
-            lblReleaseReadyCountSummary.Location = new Point(458, 181);
+            lblReleaseReadyCountSummary.Location = new Point(359, 178);
             lblReleaseReadyCountSummary.Name = "lblReleaseReadyCountSummary";
             lblReleaseReadyCountSummary.Size = new Size(29, 15);
             lblReleaseReadyCountSummary.TabIndex = 22;
@@ -438,7 +420,7 @@
             // lblTotalAnimalsSummary
             // 
             lblTotalAnimalsSummary.AutoSize = true;
-            lblTotalAnimalsSummary.Location = new Point(458, 47);
+            lblTotalAnimalsSummary.Location = new Point(359, 44);
             lblTotalAnimalsSummary.Name = "lblTotalAnimalsSummary";
             lblTotalAnimalsSummary.Size = new Size(29, 15);
             lblTotalAnimalsSummary.TabIndex = 21;
@@ -538,6 +520,23 @@
             lblSearchByID.TabIndex = 31;
             lblSearchByID.Text = "Search By ID:";
             // 
+            // dgvAnimals
+            // 
+            dgvAnimals.AllowUserToAddRows = false;
+            dgvAnimals.AllowUserToDeleteRows = false;
+            dgvAnimals.BackgroundColor = Color.DarkCyan;
+            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
+            dgvAnimals.GridColor = Color.DarkGray;
+            dgvAnimals.Location = new Point(314, 0);
+            dgvAnimals.MultiSelect = false;
+            dgvAnimals.Name = "dgvAnimals";
+            dgvAnimals.ReadOnly = true;
+            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnimals.Size = new Size(743, 411);
+            dgvAnimals.TabIndex = 12;
+            dgvAnimals.CellClick += dgvAnimals_CellClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -555,12 +554,12 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvAnimals).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAnimals).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
