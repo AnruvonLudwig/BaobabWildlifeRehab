@@ -33,8 +33,8 @@ namespace BaobabWildlifeRehab.BusinessLogic
                 "Wildlife Rehabilitation Summary" + Environment.NewLine +
                 "Generated: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine +
                 "Total Animals: " + report.TotalAnimals + Environment.NewLine +
-                "Average Age: " + FormatAverage(report.AverageAge) + Environment.NewLine +
-                "Average Recovery Score: " + FormatAverage(report.AverageRecoveryScore) + Environment.NewLine +
+                "Average Age: " + report.FormatAverage(report.AverageAge) + Environment.NewLine +
+                "Average Recovery Score: " + report.FormatAverage(report.AverageRecoveryScore) + Environment.NewLine +
                 "Animals by Status:" + Environment.NewLine +
                 string.Join(Environment.NewLine,
                     report.StatusCounts.Select(s => s.Key + ": " + s.Value));
@@ -44,11 +44,6 @@ namespace BaobabWildlifeRehab.BusinessLogic
 
             // Return the report to the UI
             return report;
-        }
-        public string FormatAverage(double? average)
-        {
-            return average.HasValue
-                ? average.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture): "N/A";
         }
     }
 }

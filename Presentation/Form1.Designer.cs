@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            //DataGridView dgvAnimals;
+            DataGridView dgvAnimals;
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -59,22 +59,6 @@
             dgvAnimals = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvAnimals).BeginInit();
             SuspendLayout();
-            // 
-            // dgvAnimals
-            // 
-            dgvAnimals.AllowUserToAddRows = false;
-            dgvAnimals.AllowUserToDeleteRows = false;
-            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
-            dgvAnimals.GridColor = Color.Cyan;
-            dgvAnimals.Location = new Point(206, 12);
-            dgvAnimals.MultiSelect = false;
-            dgvAnimals.Name = "dgvAnimals";
-            dgvAnimals.ReadOnly = true;
-            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvAnimals.Size = new Size(744, 168);
-            dgvAnimals.TabIndex = 12;
-            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
             // 
             // Id
             // 
@@ -236,11 +220,11 @@
             // lblTotalAnimals
             // 
             lblTotalAnimals.AutoSize = true;
-            lblTotalAnimals.Location = new Point(12, 196);
+            lblTotalAnimals.Location = new Point(18, 389);
             lblTotalAnimals.Name = "lblTotalAnimals";
-            lblTotalAnimals.Size = new Size(38, 15);
+            lblTotalAnimals.Size = new Size(76, 15);
             lblTotalAnimals.TabIndex = 13;
-            lblTotalAnimals.Text = "label1";
+            lblTotalAnimals.Text = "TotalAnimals";
             lblTotalAnimals.Click += lblTotalAnimals_Click;
             // 
             // lblReleaseReadyCount
@@ -276,11 +260,11 @@
             // lblSeriousCount
             // 
             lblSeriousCount.AutoSize = true;
-            lblSeriousCount.Location = new Point(56, 196);
+            lblSeriousCount.Location = new Point(122, 389);
             lblSeriousCount.Name = "lblSeriousCount";
-            lblSeriousCount.Size = new Size(38, 15);
+            lblSeriousCount.Size = new Size(78, 15);
             lblSeriousCount.TabIndex = 17;
-            lblSeriousCount.Text = "label5";
+            lblSeriousCount.Text = "SeriousCount";
             lblSeriousCount.Click += lblSeriousCount_Click;
             // 
             // lblCriticalCount
@@ -312,6 +296,22 @@
             lblAverageAge.TabIndex = 20;
             lblAverageAge.Text = "label8";
             lblAverageAge.Click += lblAverageAge_Click;
+            // 
+            // dgvAnimals
+            // 
+            dgvAnimals.AllowUserToAddRows = false;
+            dgvAnimals.AllowUserToDeleteRows = false;
+            dgvAnimals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAnimals.Columns.AddRange(new DataGridViewColumn[] { Id, colName, Species, Age, RecoveryScore, Status, HousingUnit });
+            dgvAnimals.GridColor = Color.Cyan;
+            dgvAnimals.Location = new Point(206, 12);
+            dgvAnimals.MultiSelect = false;
+            dgvAnimals.Name = "dgvAnimals";
+            dgvAnimals.ReadOnly = true;
+            dgvAnimals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAnimals.Size = new Size(744, 168);
+            dgvAnimals.TabIndex = 12;
+            dgvAnimals.CellContentClick += dgvAnimals_CellContentClick;
             // 
             // Form1
             // 

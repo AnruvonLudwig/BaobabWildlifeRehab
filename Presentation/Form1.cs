@@ -93,8 +93,8 @@ namespace BaobabWildlifeRehab
                 // Update the labels with the summary report data
 
                 lblTotalAnimals.Text = $"Total animals: {report.TotalAnimals}";
-                lblAverageAge.Text = $"Average age (years): {FormatAverage(report.AverageAge)}";
-                lblAverageScore.Text = $"Average recovery score: " + $"{FormatAverage(report.AverageRecoveryScore)}";
+                lblAverageAge.Text = $"Average age (years): {report.FormatAverage(report.AverageAge)}";
+                lblAverageScore.Text = $"Average recovery score: " + $"{report.FormatAverage(report.AverageRecoveryScore)}";
                 lblCriticalCount.Text = $"Critical: {report.StatusCounts["Critical"]}";
                 lblSeriousCount.Text = $"Serious: {report.StatusCounts["Serious"]}";
                 lblStableCount.Text = $"Stable: {report.StatusCounts["Stable"]}";

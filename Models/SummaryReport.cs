@@ -20,5 +20,10 @@ namespace BaobabWildlifeRehab.Models
         public double? AverageAge { get; set; } // null = no animals -> show "N/A"
         public double? AverageRecoveryScore { get; set; } // null = no animals -> show "N/A"
         public Dictionary<string, int> StatusCounts { get; set; }
+        public string FormatAverage(double? average)
+        {
+            return average.HasValue
+                ? average.Value.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) : "N/A";
+        }
     }
 }
