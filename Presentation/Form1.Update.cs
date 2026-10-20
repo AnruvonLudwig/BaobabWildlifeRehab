@@ -49,7 +49,7 @@ namespace BaobabWildlifeRehab
 
             Animal? animal = handler.FindById(id);
 
-            if (animal != null)
+            if (animal == null)
             {
                 SetAddMode();
                 txtSearchID.Text = id;
@@ -84,6 +84,7 @@ namespace BaobabWildlifeRehab
             txtAnimaliD.ReadOnly = true;
             btnAdd.Enabled = false;
             btnSaveChanges.Enabled = true;
+            btnDelete.Enabled = true;
         }
 
         private void SetAddMode()
@@ -100,6 +101,8 @@ namespace BaobabWildlifeRehab
             txtAnimaliD.ReadOnly = false;
             btnAdd.Enabled = true;
             btnSaveChanges.Enabled = false;
+            btnDelete.Enabled = false;
+   
         }
     }
 }
