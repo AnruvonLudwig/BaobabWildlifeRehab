@@ -18,7 +18,7 @@ namespace BaobabWildlifeRehab.Data
             }
             catch (UnauthorizedAccessException exAuth)
             {
-                throw new DataAccessException("Does not have Permission to delete record");
+                throw new DataAccessException("You do not have permission to update animals.txt.");
             }
             catch (IOException exIO)
             {
