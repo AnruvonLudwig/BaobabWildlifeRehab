@@ -12,10 +12,10 @@ namespace BaobabWildlifeRehab
         {
             InitializeComponent();
 
-            
+
         }
 
-        
+
 
         private void txtAnimaliD_TextChanged(object sender, EventArgs e)
         {
@@ -42,10 +42,7 @@ namespace BaobabWildlifeRehab
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
@@ -109,7 +106,7 @@ namespace BaobabWildlifeRehab
                 lblStableCount.Text = $"Stable: {report.StatusCounts["Stable"]}";
                 lblRecoveringCount.Text = $"Recovering: {report.StatusCounts["Recovering"]}";
                 lblReleaseReadyCount.Text = $"Release-Ready: {report.StatusCounts["Release-Ready"]}";
-            
+
             }
             catch (Exception ex)
             {
@@ -165,10 +162,10 @@ namespace BaobabWildlifeRehab
 
         private void dgvAnimals_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
-        
+
     }
 }
  

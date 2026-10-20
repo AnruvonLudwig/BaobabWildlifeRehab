@@ -76,5 +76,14 @@ namespace BaobabWildlifeRehab.Data
 
     }
 
-}
+        // finds animal by id
+        public Animal? FindById(string id)
+        {
+            if (!DataSource.Cast<Animal>().Any(a => a.Id == id)) return null;
+            return DataSource.Cast<Animal>().First(a => a.Id == id);
+
+        }
+
+
+    }
 }

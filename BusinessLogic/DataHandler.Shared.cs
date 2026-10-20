@@ -9,9 +9,23 @@ namespace BaobabWildlifeRehab.BusinessLogic
             string ageText, string scoreText,
             out string cleanName, out string cleanSpecies, out int age, out int score)
         {
-            // TODO
+            //Validate empty
+            if (name == String.Empty) throw new ValidationException("Field not filled in!", "Name");
+            if (species == String.Empty) throw new ValidationException("Field not filled in!", "Species");
+            if (ageText == String.Empty) throw new ValidationException("Field not filled in!", "age");
+            if (scoreText == String.Empty) throw new ValidationException("Field not filled in!", "Score");
+
+            //convert
+            if (!int.TryParse(ageText, out age)) throw new ValidationException($"{age} is not a number!", "Age");
+            if (!int.TryParse(scoreText, out score)) throw new ValidationException($"{score} is not a number!", "Score");
+
+            if ( age < 0) throw new ValidationException($"{age} is a negative!", "Age");
+            if (score < 0 || score > 100) throw new ValidationException($"{score} is not a range 0-100", "Score");
+
+            cleanName = name.Trim();
+            cleanSpecies = species.Trim();
             
-            throw new NotImplementedException();
+            
         }
 
         // Maps a recovery score (0-100) to its status and housing unit.
