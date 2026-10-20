@@ -1,4 +1,5 @@
 using BaobabWildlifeRehab.Models;
+using System.Text.RegularExpressions;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace BaobabWildlifeRehab.BusinessLogic
@@ -13,10 +14,21 @@ namespace BaobabWildlifeRehab.BusinessLogic
             int score;
 
             //Validation
-            if (id == String.Empty) throw new ValidationException("Field not filled in!",FieldNames.AnimalID);
-            ValidateCommonFields(name, species, ageText, scoreText,out name,out species,out age,out score); 
+            if (id == String.Empty) throw new ValidationException("Animal ID cannot be blank!",FieldNames.AnimalID);
 
-            if (data.FindById(id) != null) throw new ValidationException("Animal exists! Duplicate ID",FieldNames.AnimalID);
+            //set id to uppercase
+            id = id.ToUpper();
+
+            //Regular expression to match pattern
+            if (!Regex.IsMatch(id, @"^WR-[0-9]{4}$")) throw new ValidationException($"ID is not in format WR-0000",FieldNames.AnimalID);
+
+            //Check Uniqueness 
+            if (data.FindById(id) != null) throw new ValidationException($"Duplicate ID: {id} exists!",FieldNames.AnimalID);
+
+            //Validate common fields
+            ValidateCommonFields(name, species, ageText, scoreText, out name, out species, out age, out score);
+
+
 
             (string status, string housingUnit) = Classify(score);
 

@@ -1,5 +1,6 @@
 ﻿using BaobabWildlifeRehab.BusinessLogic;
 using BaobabWildlifeRehab.Data;
+using BaobabWildlifeRehab.Models;
 
 namespace BaobabWildlifeRehab
 {
@@ -16,7 +17,8 @@ namespace BaobabWildlifeRehab
 
             try
             {
-                handler.Add(id,name,species,ageText,scoreText);
+                Animal newAnimal = handler.Add(id,name,species,ageText,scoreText);
+                MessageBox.Show($"Added new animal: {id}.\nStatus is: {newAnimal.Status}\nHoused at: {newAnimal.HousingUnit}");
             }
             catch (ValidationException valEx)
             {
