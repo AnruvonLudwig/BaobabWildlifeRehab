@@ -27,7 +27,8 @@
         ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        { 
+        {
+
             Id = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             Species = new DataGridViewTextBoxColumn();
@@ -136,7 +137,6 @@
             txtAnimaliD.Name = "txtAnimaliD";
             txtAnimaliD.Size = new Size(107, 23);
             txtAnimaliD.TabIndex = 0;
-            
             // 
             // txtName
             // 
@@ -144,7 +144,6 @@
             txtName.Name = "txtName";
             txtName.Size = new Size(107, 23);
             txtName.TabIndex = 1;
-           
             // 
             // txtSpecies
             // 
@@ -152,7 +151,6 @@
             txtSpecies.Name = "txtSpecies";
             txtSpecies.Size = new Size(107, 23);
             txtSpecies.TabIndex = 2;
-           
             // 
             // txtAge
             // 
@@ -160,7 +158,6 @@
             txtAge.Name = "txtAge";
             txtAge.Size = new Size(107, 23);
             txtAge.TabIndex = 3;
-           
             // 
             // txtRecoveryScore
             // 
@@ -168,7 +165,6 @@
             txtRecoveryScore.Name = "txtRecoveryScore";
             txtRecoveryScore.Size = new Size(107, 23);
             txtRecoveryScore.TabIndex = 4;
-           
             // 
             // btnAdd
             // 
@@ -238,7 +234,6 @@
             txtSearchID.Name = "txtSearchID";
             txtSearchID.Size = new Size(107, 23);
             txtSearchID.TabIndex = 11;
-           
             // 
             // lblTotalAnimals
             // 
@@ -248,7 +243,6 @@
             lblTotalAnimals.Size = new Size(79, 15);
             lblTotalAnimals.TabIndex = 13;
             lblTotalAnimals.Text = "Total Animals";
-          
             // 
             // lblReleaseReadyCount
             // 
@@ -258,7 +252,6 @@
             lblReleaseReadyCount.Size = new Size(111, 15);
             lblReleaseReadyCount.TabIndex = 14;
             lblReleaseReadyCount.Text = "Release Redy Count";
-          
             // 
             // lblRecoveringCount
             // 
@@ -268,7 +261,6 @@
             lblRecoveringCount.Size = new Size(102, 15);
             lblRecoveringCount.TabIndex = 15;
             lblRecoveringCount.Text = "Recovering Count";
-           
             // 
             // lblStableCount
             // 
@@ -278,7 +270,6 @@
             lblStableCount.Size = new Size(75, 15);
             lblStableCount.TabIndex = 16;
             lblStableCount.Text = "Stable Count";
-          
             // 
             // lblSeriousCount
             // 
@@ -288,7 +279,6 @@
             lblSeriousCount.Size = new Size(81, 15);
             lblSeriousCount.TabIndex = 17;
             lblSeriousCount.Text = "Serious Count";
-          
             // 
             // lblCriticalCount
             // 
@@ -298,7 +288,6 @@
             lblCriticalCount.Size = new Size(80, 15);
             lblCriticalCount.TabIndex = 18;
             lblCriticalCount.Text = "Critical Count";
-          
             // 
             // lblAverageScore
             // 
@@ -308,7 +297,6 @@
             lblAverageScore.Size = new Size(82, 15);
             lblAverageScore.TabIndex = 19;
             lblAverageScore.Text = "Average Score";
-          
             // 
             // lblAverageAge
             // 
@@ -318,7 +306,6 @@
             lblAverageAge.Size = new Size(74, 15);
             lblAverageAge.TabIndex = 20;
             lblAverageAge.Text = "Average Age";
-           
             // 
             // panel1
             // 
@@ -425,7 +412,6 @@
             lblTotalAnimalsSummary.Size = new Size(29, 15);
             lblTotalAnimalsSummary.TabIndex = 21;
             lblTotalAnimalsSummary.Text = "N/A";
-         
             // 
             // lblRecoveryScore
             // 
@@ -552,7 +538,7 @@
             Controls.Add(dgvAnimals);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Baobob Wildlife Rehab";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
