@@ -11,7 +11,7 @@ namespace BaobabWildlifeRehab.BusinessLogic
             Animal? existingAnimal = data.FindById(existingId);
 
             if (existingAnimal == null)
-                throw new ValidationException("Animal ID was not found.", "ID");
+                throw new ValidationException("Animal ID was not found.",FieldNames.AnimalID);
 
             ValidateCommonFields(name, species, ageText, scoreText,
                 out string cleanName, out string cleanSpecies, out int age, out int score);

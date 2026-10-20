@@ -15,28 +15,34 @@ namespace BaobabWildlifeRehab.BusinessLogic
             cleanSpecies = species.Trim();
 
             if (cleanName == "")
-                throw new ValidationException("Name is required.", "Name");
+                throw new ValidationException("Name is required.",FieldNames.Name);
 
             if (cleanSpecies == "")
-                throw new ValidationException("Species is required.", "Species");
+                throw new ValidationException("Species is required.",FieldNames.Species);
+
+            if (cleanName.Length > 30)
+                throw new ValidationException("Name cannot be longer than 30 characters", FieldNames.Name);
+
+            if (cleanSpecies.Length > 30)
+                throw new ValidationException("Species cannot be longer than 30 characters", FieldNames.Species);
 
             if (cleanName.Contains("|") || cleanName.Contains("\r") || cleanName.Contains("\n"))
-                throw new ValidationException("Name cannot contain | or a line break.", "Name");
+                throw new ValidationException("Name cannot contain | or a line break.",FieldNames.Name);
 
             if (cleanSpecies.Contains("|") || cleanSpecies.Contains("\r") || cleanSpecies.Contains("\n"))
-                throw new ValidationException("Species cannot contain | or a line break.", "Species");
+                throw new ValidationException("Species cannot contain | or a line break.",FieldNames.Species);
 
             if (!int.TryParse(ageText, out age))
-                throw new ValidationException("Age must be a whole number.", "Age");
+                throw new ValidationException("Age must be a whole number.",FieldNames.Age);
 
-            if (age < 0)
-                throw new ValidationException("Age cannot be negative.", "Age");
+            if (age < 0 || age > 100)
+                throw new ValidationException("Age must be between 0 and 100.", FieldNames.Age);
 
             if (!int.TryParse(scoreText, out score))
-                throw new ValidationException("Recovery score must be a whole number.", "Recovery Score");
+                throw new ValidationException("Recovery score must be a whole number.",FieldNames.RecoveryScore);
 
             if (score < 0 || score > 100)
-                throw new ValidationException("Recovery score must be between 0 and 100.", "Recovery Score");
+                throw new ValidationException("Recovery score must be between 0 and 100.",FieldNames.RecoveryScore);
         }
 
         // Maps a recovery score (0-100) to its status and housing unit.

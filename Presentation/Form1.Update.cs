@@ -23,6 +23,7 @@ namespace BaobabWildlifeRehab
             catch (ValidationException ex)
             {
                 MessageBox.Show(ex.Message);
+                FocusErrorField(ex.FieldName);
             }
             catch (DataAccessException ex)
             {
