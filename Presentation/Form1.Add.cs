@@ -20,7 +20,8 @@ namespace BaobabWildlifeRehab
             }
             catch (ValidationException valEx)
             {
-                MessageBox.Show($"{valEx.Message} Due to Field: {valEx.FieldName}");
+                MessageBox.Show($"{valEx.Message}");
+                FocusErrorField(valEx.FieldName);
             }
             catch (DataAccessException datEx)
             {

@@ -13,10 +13,10 @@ namespace BaobabWildlifeRehab.BusinessLogic
             int score;
 
             //Validation
-            if (id == String.Empty) throw new ValidationException("Field not filled in!", "AnimalID");
+            if (id == String.Empty) throw new ValidationException("Field not filled in!",FieldNames.AnimalID);
             ValidateCommonFields(name, species, ageText, scoreText,out name,out species,out age,out score); 
 
-            if (data.FindById(id) != null) throw new ValidationException("Animal exists! Duplicate ID", "AnimalID");
+            if (data.FindById(id) != null) throw new ValidationException("Animal exists! Duplicate ID",FieldNames.AnimalID);
 
             (string status, string housingUnit) = Classify(score);
 
